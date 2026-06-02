@@ -350,7 +350,7 @@ export default function TasksPage() {
                     <button key={item} onClick={() => f.set(item)}
                       className={`px-2.5 py-1 rounded-xl text-[11px] font-medium transition-all ${
                         f.val===item ? "bg-indigo-500 text-white" : "bg-gray-100 text-gray-500 hover:bg-gray-200"}`}>
-                      {f.labels[item] ?? item}
+                      {f.labels[item as keyof typeof f.labels] ?? item}
                     </button>
                   ))}
                 </div>
